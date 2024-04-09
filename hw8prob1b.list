@@ -1,0 +1,25 @@
+addr data   label     opcode  operands
+---- ----  --------   ------  --------
+1000 0005  ARRAY      .DW     $5      
+1002 0002             .DW     $2      
+1004 0008             .DW     $8      
+1006 0009             .DW     $9      
+1008 0006             .DW     $6      
+0000 2040  START      MV      R1 R0   
+0002 C2C8  LOOP       SLLI    R3 R1   
+0004 0001                     $1      
+0006 2918             LW      R4 R3   
+0008 1000                     ARRAY   
+000A 3120             ADDI    R4 R4   
+000C 0001                     $1      
+000E 381C             SW      R3 R4   
+0010 1000                     ARRAY   
+0012 3048             ADDI    R1 R1   
+0014 0001                     $1      
+0016 5208             SLTI    R0 R1   
+0018 0005                     $5      
+001A 9800             BRN             
+001C 0002                     LOOP    
+001E C800             BRZ             
+0020 0022                     DONE    
+0022 FE00  DONE       STOP            
