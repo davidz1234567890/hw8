@@ -1,0 +1,11 @@
+addr data   label     opcode  operands
+---- ----  --------   ------  --------
+0000 31C0             LI      R7      
+0002 0000                     $0      
+0004 30D8  LOOP       ADDI    R3 R3   
+0006 0001                     $1      
+0008 5218             SLTI    R0 R3   
+000A 0005                     $5      
+000C 9800             BRN             
+000E 0004                     LOOP    
+0010 FE00  END        STOP            

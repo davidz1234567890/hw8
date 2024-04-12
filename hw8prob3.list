@@ -1,0 +1,36 @@
+addr data   label     opcode  operands
+---- ----  --------   ------  --------
+1234 0008  A          .DW     $8      
+1236 0004  B          .DW     $4      
+1238 0000  RES        .DW     $0      
+123A 3040  START      LI      R1      
+123C 1234                     A       
+123E 3080             LI      R2      
+1240 1236                     B       
+1242 28C8             LW      R3 R1   
+1244 0000                     $0      
+1246 2910             LW      R4 R2   
+1248 0000                     $0      
+124A 501C             SLT     R0 R3 R4
+124C C800             BRZ             
+124E 126E                     END     
+1250 501C  LOOP       SLT     R0 R3 R4
+1252 9800             BRN             
+1254 1262                     ALTB    
+1256 10DC             SUB     R3 R3 R4
+1258 501C             SLT     R0 R3 R4
+125A C800             BRZ             
+125C 126E                     END     
+125E F800             BRA             
+1260 1250                     LOOP    
+1262 1123  ALTB       SUB     R4 R4 R3
+1264 501C             SLT     R0 R3 R4
+1266 C800             BRZ             
+1268 126E                     END     
+126A F800             BRA             
+126C 1250                     LOOP    
+126E 3140  END        LI      R5      
+1270 1238                     RES     
+1272 382B             SW      R5 R3   
+1274 0000                     $0      
+1276 FE00             STOP            
