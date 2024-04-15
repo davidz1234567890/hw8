@@ -1,8 +1,9 @@
 
     .ORG $1234
 A   .DW $8 ; value of a.
-B   .DW $4 ; value of b
+B   .DW $7 ; value of b
 RES .DW $0
+
 
 START LI R1, A ; loads address of A
       LI R2, B ; loads address of B
