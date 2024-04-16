@@ -1,7 +1,7 @@
 addr data   label     opcode  operands
 ---- ----  --------   ------  --------
-1234 0008  A          .DW     $8      
-1236 0007  B          .DW     $7      
+1234 000F  A          .DW     $F      
+1236 0009  B          .DW     $9      
 1238 0000  RES        .DW     $0      
 123A 3040  START      LI      R1      
 123C 1234                     A       

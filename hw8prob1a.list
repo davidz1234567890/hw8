@@ -1,17 +1,21 @@
 addr data   label     opcode  operands
 ---- ----  --------   ------  --------
-0000 3080  START      LI      R2      
-0002 0000                     $0      
-0004 30C0             LI      R3      
-0006 0008                     $8      
-0008 3040             LI      R1      
-000A 0001                     $1      
-000C 5013  LOOP       SLT     R0 R2 R3
-000E C800             BRZ             
-0010 001C                     FINISH  
-0012 3090             ADDI    R2 R2   
-0014 0001                     $1      
-0016 10D9             SUB     R3 R3 R1
-0018 F800             BRA             
-001A 000C                     LOOP    
-001C FE00  FINISH     STOP            
+0000 F800             BRA             
+0002 0200                     $200    
+1000 0000             .DW     $0      
+1002 0008             .DW     $8      
+0200 2880  START      LW      R2 R0   
+0202 1000                     $1000   
+0204 28C0             LW      R3 R0   
+0206 1002                     $1002   
+0208 3040             LI      R1      
+020A 0001                     $1      
+020C 501A  LOOP       SLT     R0 R3 R2
+020E D800             BRNZ            
+0210 021C                     FINISH  
+0212 3090             ADDI    R2 R2   
+0214 0001                     $1      
+0216 10D9             SUB     R3 R3 R1
+0218 F800             BRA             
+021A 020C                     LOOP    
+021C FE00  FINISH     STOP            

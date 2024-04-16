@@ -1,7 +1,7 @@
 
     .ORG $1234
-A   .DW $8 ; value of a.
-B   .DW $7 ; value of b
+A   .DW $F ; value of a.
+B   .DW $9 ; value of b
 RES .DW $0
 
 
